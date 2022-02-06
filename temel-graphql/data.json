@@ -1,0 +1,28 @@
+{
+  "personeller": [
+    {
+      "id": "2",
+      "isim": "Sisi",
+      "yas": 22,
+      "email": "neco@gmail.com"
+    },
+    {
+      "id": "3",
+      "isim": "Vali",
+      "yas": 20,
+      "email": "vali@gmail.com"
+    },
+    {
+      "id": "4",
+      "isim": "Buddy",
+      "yas": 8,
+      "email": "buddy@gmail.com"
+    },
+    {
+      "isim": "Necip",
+      "email": "nexco@hotmail.com",
+      "yas": 30,
+      "id": "5"
+    }
+  ]
+}
