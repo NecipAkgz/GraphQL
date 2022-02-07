@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 function KarakterItem({ karakter: { id, name, status, gender, image } }) {
   return (
-    <div className='card card-body mb-3'>
-      <div className='row'>
+    <div className='card card-body shadow-sm mb-3'>
+      <div className='row align-items-center'>
         <div className='col-md-3'>
           <img style={{ width: 120 }} src={image} alt={name} />
         </div>

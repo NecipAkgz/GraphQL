@@ -30,7 +30,7 @@ function App() {
             onClick={() => setTab('karakterler')}>
             Karakterler
           </button>
-          <button className='btn btn-link' onClick={() => setTab('konmlar')}>
+          <button className='btn btn-link' onClick={() => setTab('konumlar')}>
             Konumlar
           </button>
 

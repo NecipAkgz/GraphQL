@@ -52,7 +52,7 @@ const RootQuery = new GraphQLObjectType({
           .then((res) => res.data.results)
       },
     },
-    karakterBilgi: {
+    sayfaBilgi: {
       type: BilgiTipi,
       args: {
         sayfa: { type: GraphQLInt },
