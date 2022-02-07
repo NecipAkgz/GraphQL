@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Karakter from './Karakter'
 
 function KarakterItem({ karakter: { id, name, status, gender, image } }) {
   return (

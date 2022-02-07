@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { useState } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  useHistory,
+} from 'react-router-dom'
 import logo from '../src/logo.png'
 import './App.css'
 import Karakter from './Karakter'
@@ -14,17 +19,25 @@ const client = new ApolloClient({
 })
 
 function App() {
+  let history = useHistory()
   const [tab, setTab] = useState('karakterler')
 
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className='container'>
-          <img
-            src={logo}
-            alt='Rick and morty'
-            style={{ width: 300, display: 'block', margin: 'auto' }}
-          />
+          <Link to='/'>
+            <img
+              src={logo}
+              alt='Rick and morty'
+              style={{
+                width: 300,
+                display: 'block',
+                margin: 'auto',
+                cursor: 'pointer',
+              }}
+            />
+          </Link>
           <button
             className='btn btn-link'
             onClick={() => setTab('karakterler')}>
@@ -40,7 +53,7 @@ function App() {
             <Route exact path='/' component={Konumlar} />
           )}
 
-          <Route exact path='/karakterler/:id' component={Karakter} />
+          <Route exact path='/karakter/:id' component={Karakter} />
         </div>
       </Router>
     </ApolloProvider>
