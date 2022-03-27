@@ -1,8 +1,19 @@
-const { products, categories, reviews } = require('../db')
-
 exports.Category = {
-  products: (parent, args, contenxt) => {
+  products: (parent, { filter }, { products }) => {
     const categoryID = parent.id
-    return products.filter((product) => product.categoryID == categoryID)
+    const categorizedProducts = products.filter(
+      (product) => product.categoryID == categoryID
+    )
+    let filteredProducts = categorizedProducts
+
+    if (filter) {
+      if (filter.onsale) {
+        filteredProducts = categorizedProducts.filter(
+          (product) => product.onSale
+        )
+      }
+    }
+
+    return filteredProducts
   },
 }

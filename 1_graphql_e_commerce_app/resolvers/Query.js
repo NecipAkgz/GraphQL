@@ -1,9 +1,15 @@
-const { products, categories, reviews } = require('../db')
-
 exports.Query = {
   hello: () => 'Hello',
-  products: () => products,
-  product: (parent, args, contenxt) => {
+  products: (parent, { filter }, { products }) => {
+    let filteredProduct = products
+    if (filter) {
+      if (filter.onsale) {
+        filteredProduct = products.filter((product) => product.onSale)
+      }
+    }
+    return filteredProduct
+  },
+  product: (parent, args, { products }) => {
     const productID = args.id
     const product = products.find((product) => product.id === productID)
 
@@ -14,7 +20,7 @@ exports.Query = {
     }
   },
   categories: () => categories,
-  category: (parent, args, contenxt) => {
+  category: (parent, args, { categories }) => {
     const categoryID = args.id
     const category = categories.find((category) => category.id === categoryID)
 
