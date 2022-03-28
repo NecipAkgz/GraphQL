@@ -18,4 +18,13 @@ exports.Mutation = {
     products.push(newProduct)
     return newProduct
   },
+
+  addReview: (parent, { input }, { reviews }) => {
+    const newReview = {
+      id: uuidv4(),
+      ...input,
+    }
+    reviews.push(newReview)
+    return newReview
+  },
 }
